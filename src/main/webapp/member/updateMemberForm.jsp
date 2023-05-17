@@ -21,7 +21,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈</a>
+	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈으로</a>
 	<a class="btn btn-warning" href ="<%=request.getContextPath() %>/member/memberInfo.jsp">회원정보</a>
 	<h1>비밀번호바꾸기</h1>
 	<!-- 오류 메시지 -->

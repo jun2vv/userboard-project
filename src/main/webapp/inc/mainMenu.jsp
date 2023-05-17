@@ -25,11 +25,14 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<div  id="nav_menu">
-<div class="container">
-	<ul class="list-group list-group-horizontal">
+<div class="row">
+<div class="col-sm-3 container"></div>
+<div class="col-sm-6 container">
+
+
+	<ul class="nav nav-tabs">
 		<!--  -->
-		<li class="list-group-item list-group-item-primary"><a href="<%=request.getContextPath()%>/home.jsp">홈으로</a></li>
+		<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/home.jsp">홈으로</a></li>
 		
 		<!-- 로그인전 : 회원가입 
 			 로그인후 : 회원정보 / 로그아웃 (로그인정보 세션 loginMemberId
@@ -38,17 +41,19 @@
 		<%
 			if(session.getAttribute("loginMemberId") == null) {	// 로그인전
 		%>
-				<li class="list-group-item list-group-item-primary"><a href="<%=request.getContextPath()%>/member/insertMemberForm.jsp">회원가입</a></li>
+				<li class="nav-item list-group-item-primary"><a class="nav-link" href="<%=request.getContextPath()%>/member/insertMemberForm.jsp">회원가입</a></li>
 		<% 
 			} else {	//로그인후
 		%>
-				<li class="list-group-item list-group-item-primary"><a href="<%=request.getContextPath()%>/member/memberInfo.jsp">회원정보</a></li>
-				<li class="list-group-item list-group-item-primary"><a href="<%=request.getContextPath()%>/inc/categoryOptionForm.jsp">지역카테고리 설정</a></li>
-				<li class="list-group-item list-group-item-primary"><a href="<%=request.getContextPath()%>/board/boardInsertForm.jsp">게시글 추가</a></li>
-				<li class="list-group-item list-group-item-primary"><a href="<%=request.getContextPath()%>/member/logoutAction.jsp">로그아웃</a></li>
+				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/memberInfo.jsp">회원정보</a></li>
+				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/inc/categoryOptionForm.jsp">지역카테고리 설정</a></li>
+				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/board/boardInsertForm.jsp">게시글 추가</a></li>
+				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/logoutAction.jsp">로그아웃</a></li>
 		<% 	
 			}
 		%>
 	</ul>
+</div>
+<div class="col-sm-3 container">
 </div>
 </div>

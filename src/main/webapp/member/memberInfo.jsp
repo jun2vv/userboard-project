@@ -66,7 +66,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈</a>
+	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈으로</a>
 	<h1>회원정보</h1>
 		<table class="table table-striped">
 			<tr>

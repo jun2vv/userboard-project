@@ -57,7 +57,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈</a>
+	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈으로</a>
 	<a class="btn btn-warning" href ="<%=request.getContextPath() %>/inc/categoryOptionForm.jsp">카테고리설정창</a>
 	<h1>지역카테고리 수정</h1>
 	<!-- 오류 메시지 -->

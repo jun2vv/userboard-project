@@ -60,7 +60,7 @@
 <body>
 	<div class="container">
 	<h1>게시글 추가창</h1>
-	<a href="<%=request.getContextPath()%>/home.jsp">홈으로</a>
+	<a class="btn btn-info" href="<%=request.getContextPath()%>/home.jsp" >홈으로</a>
 	<form action="<%=request.getContextPath()%>/board/boardInsertAction.jsp" method="post">
 		<table class="table table-striped">
 			<tr>

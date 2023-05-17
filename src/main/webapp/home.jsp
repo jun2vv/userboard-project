@@ -20,8 +20,6 @@
 	// 페이지당 시작 행번호
 	int startRow = (currentPage-1) * rowPerPage;
 	
-	
-	
 	// localName을 전체로 선언해 놓음으로써 초기화면을 전체데이터를 출력한다.
 	String localName = "전체";
 	if(request.getParameter("localName") != null){
@@ -89,9 +87,8 @@
 	System.out.println(localList + " <- home localList");
 	System.out.println(localList.size() + " <- home localList.size()");
 	
-	
+	// 페이징 모델
 	int totalRow = 0;	//전체 행의 갯수를 담을 변수
-
 	String pageSql = "select count(*) from board";
 	PreparedStatement pageStmt= null;
 	
@@ -105,19 +102,34 @@
 	if(pagingRs.next()) {
 		totalRow = pagingRs.getInt("count(*)");
 	}
-	//System.out.println( totalRow + BG_RED+ "<---totalRow home.jsp" +RESET);
+	
 	int lastPage = totalRow / rowPerPage;
 	//rowPerPage가 딱 나뉘어 떨어지지 않으면 그 여분을 보여주기 위해 +1
 	if(totalRow % rowPerPage != 0) {
 		lastPage = lastPage + 1;
 	}
-	//System.out.println( lastPage + BG_RED+ "<---lastPage home.jsp" +RESET);
-	
-		//페이징을 리스트 형태로 변환하기 위한 변수 선언
- 	int pageRange = 4; // 현재 페이지 주변에 보여줄 페이지의 수
- 	//Math.max --> 값들 중 가장 큰 값 반환  Math.min --> 값들 중 가장 작은 값 반환
-    int startPage = Math.max(1, currentPage - pageRange); // 현재 페이지 주변의 첫 페이지 번호 계산
-    int endPage = Math.min(lastPage, currentPage + pageRange); // 현재 페이지 주변의 마지막 페이지 번호 계산
+	// 페이지 네비게이션 페이징
+		int pagePerPage = 10;
+		/*	cp	minPage		maxPage
+			1		1	~	10
+			2		1	~	10
+			10		1	~	10
+			
+			11		11	~	20
+			12		11	~	20
+			20		11	~	20
+			
+			((cp-1) / pagePerPage) * pagePerPage + 1 --> minPage
+			minPage + (pagePerPgae -1) --> maxPage
+			maxPage > lastPage --> maxPage = lastPage;
+		*/
+		// 마지막 페이지 구하기
+		// 최소페이지,최대페이지 구하기
+		int minPage = ((currentPage-1) / pagePerPage) * pagePerPage + 1;
+		int maxPage = minPage + (pagePerPage -1);
+		if(maxPage > lastPage) {
+			maxPage = lastPage;
+		}
 	
 %>
 
@@ -194,7 +206,7 @@
 		     
         } else {
     	 %>
-     		<h2><%=session.getAttribute("loginMemberId")%>님</h2>
+     			<h2><%=session.getAttribute("loginMemberId")%>님</h2>
      		<!-- 메인메뉴(가로) -->
 			<!-- 서버기술이기 때문에 ﹤% request...%﹥를 쓸 필요가 없음 -->
     	 <%
@@ -202,9 +214,8 @@
      	%>   
 	</div>
 	<div class="col-sm-2 container">
-	<div style="margin-top: 32px; text-align: center;">
 	<!-- 서브메뉴(세로) subMenuList메뉴를 출력-->
-	<div style="margin-top: 32px; text-align: center;">
+	<div style=" text-align: center;">
 		<table class="table table-bordered">
 			<%
 			for(HashMap<String, Object> m : subMenuList) {
@@ -219,7 +230,6 @@
 			}
 			%>
 		</table>
-	</div>
 	</div>
 	</div>
 	<!-- (시작부분)localList--------------------------------------------------------------------------------- -->
@@ -248,37 +258,64 @@
 	</table>
 </div>	
 </div>
+	<ul class="pagination justify-content-center list-group list-group-horizontal">
 		<% 	//페이지가 1이 상이면 이전 페이지 보여주기
-			if (startPage > 1) {
+			if (minPage > 1) {
 		%>
-			<a href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=1%>&localName=<%=localName%>">1</a>
-			
+				<li class="list-group-item list-group-item-dark">
+					<a href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=1%>&localName=<%=localName%>">첫페이지로</a>
+				</li>
 		<%
-		      } 
+			      } 
+			if (minPage > 1) {
+		%>
+				<li class="list-group-item list-group-item-dark">
+					<!-- 이전페이지 -->
+					<a href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=minPage - pagePerPage%>&localName=<%=localName%>">이전</a>
+				</li>
+		<%
+		   	} 
 		      
-			for (int i = startPage; i <= endPage; i+=1) { 
+			for (int i = minPage; i <= maxPage; i+=1) { 
 				if (i == currentPage) {
 		%>
-					<%=i%>>
+					<li class="list-group-item">
+						<!-- 현재위치한 페이지 빨간색표시 -->
+						<span style="color: red;"><%=i %></span>
+					</li>
 		<%
 				} else {
-		%>
-					<a href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=i%>&localName=<%=localName%>"><%=i%></a>
+		%>			
+					<li class="list-group-item">
+						<!--  1~10, 11~20... 페이지 출력 -->
+						<a href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=i%>&localName=<%=localName%>"><%=i%></a>
+					</li>
 		<% 
 				} 
 			} 	
-			
-		      if (endPage < lastPage) {
+		      	if(maxPage != lastPage) {
 		%>
-					
-					<a href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=lastPage%>&localName=<%=localName%>"><%=lastPage%>마지막페이지</a>
+					<li class="list-group-item list-group-item-dark">
+						<!--  다음페이지 maxPage+1을해도 아래와 같다 -->
+						<a href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=minPage + pagePerPage%>&localName=<%=localName%>">다음</a>
+					</li>
 		<% 
-			}
+			 	 }
+		      	if(maxPage < lastPage) {
+		    	  
 		%>
-	<div>
-		<!-- include 페이지 : Copyright &copy; 구디아카데미 -->
-		<jsp:include page="/inc/copyright.jsp"></jsp:include>
-	</div>
+					<li class="list-group-item list-group-item-dark">
+						<!-- 마지막페이지로  -->
+					  	<a  href="<%=request.getContextPath()%>/home.jsp?currentPage=<%=lastPage%>&localName=<%=localName%>">마지막페이지</a>
+					</li>
+		<%    
+			  	}
+		%>
+	</ul>
+<div>
+	<!-- include 페이지 : Copyright &copy; 구디아카데미 -->
+	<jsp:include page="/inc/copyright.jsp"></jsp:include>
+</div>
 	
 </div>
 </body>

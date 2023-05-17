@@ -52,15 +52,13 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
+	<div style="text-align: center;">
 	<h1>지역 카테고리 설정창</h1>
-		
-			<ul class="list-group list-group-horizontal">
-				<li class="list-group-item"><a href="<%=request.getContextPath()%>/home.jsp" class="list-group-item list-group-item-action list-group-item-danger">홈으로</a></li>
-				<li class="list-group-item"><a href="<%=request.getContextPath()%>/member/categoryInsertForm.jsp" class="list-group-item list-group-item-action list-group-item-danger">지역카테고리 추가</a></li>
-				<li class="list-group-item"><a href="<%=request.getContextPath()%>/member/categoryUpdateForm.jsp" class="list-group-item list-group-item-action list-group-item-danger">지역카테고리 수정</a></li>
-				<li class="list-group-item"><a href="<%=request.getContextPath()%>/member/categoryDeleteForm.jsp" class="list-group-item list-group-item-action list-group-item-danger">지역카테고리 삭제</a></li>
-			</ul>
-		
+		<a href="<%=request.getContextPath()%>/home.jsp" class="btn btn-info">홈으로</a>
+		<a href="<%=request.getContextPath()%>/member/categoryInsertForm.jsp" class="btn btn-outline-success">지역카테고리 추가</a>
+		<a href="<%=request.getContextPath()%>/member/categoryUpdateForm.jsp" class="btn btn-outline-success">지역카테고리 수정</a>
+		<a href="<%=request.getContextPath()%>/member/categoryDeleteForm.jsp" class="btn btn-outline-success">지역카테고리 삭제</a>
+	</div>	
 		<table class="table table-bordered">
 			<tr class="table-info">
 				<th>카테고리명</th>
