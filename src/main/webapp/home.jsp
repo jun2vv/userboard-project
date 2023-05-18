@@ -258,8 +258,9 @@
 	</table>
 </div>	
 </div>
+	<!--  페이징  ---------------- -->
 	<ul class="pagination justify-content-center list-group list-group-horizontal">
-		<% 	//페이지가 1이 상이면 이전 페이지 보여주기
+		<% 	// 최소페이지가 1보다크면 첫페이지로 가게 해주는 버튼
 			if (minPage > 1) {
 		%>
 				<li class="list-group-item list-group-item-dark">
@@ -267,6 +268,7 @@
 				</li>
 		<%
 			      } 
+			// 최소페이지가 1보다크면 이전페이지(이전페이지는 만약 내가 11페이지면 1페이지로 21페이지면 11페이지로)버튼
 			if (minPage > 1) {
 		%>
 				<li class="list-group-item list-group-item-dark">
@@ -280,10 +282,11 @@
 				if (i == currentPage) {
 		%>
 					<li class="list-group-item">
-						<!-- 현재위치한 페이지 빨간색표시 -->
+						<!-- i와 현재페이지가 같은곳이라면 현재위치한 페이지 빨간색표시 -->
 						<span style="color: red;"><%=i %></span>
 					</li>
 		<%
+				// i가 현재페이지와 다르다면 출력
 				} else {
 		%>			
 					<li class="list-group-item">
@@ -293,6 +296,8 @@
 		<% 
 				} 
 			} 	
+				// maxPage가 마지막페이지와 다르다면 다음버튼 마지막페이지에서는 둘이 같으니 다음버튼이 안나오겠죠
+				// 다음페이지(만약 내가 1페이지에서 누르면 11페이지로 11페이지에서 누르면 21페이지로)버튼
 		      	if(maxPage != lastPage) {
 		%>
 					<li class="list-group-item list-group-item-dark">
@@ -301,8 +306,8 @@
 					</li>
 		<% 
 			 	 }
+				// maxPage가 lastPage보다 작으면 현재마지막페이지가 아닌것 이므로 마지막페이지로 갈 수 있는 버튼
 		      	if(maxPage < lastPage) {
-		    	  
 		%>
 					<li class="list-group-item list-group-item-dark">
 						<!-- 마지막페이지로  -->
