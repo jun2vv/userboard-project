@@ -3,6 +3,7 @@
 <%@ page import = "java.util.*" %>
 <%@ page import ="vo.*" %>
 <%
+	// ddddd
 	response.setCharacterEncoding("utf-8");
 	System.out.println(request.getParameter("localName")+ "<--- home localName");
 		
