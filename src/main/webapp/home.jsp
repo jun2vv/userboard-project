@@ -3,7 +3,7 @@
 <%@ page import = "java.util.*" %>
 <%@ page import ="vo.*" %>
 <%
-	// ddddd
+	// 깃 테스트
 	response.setCharacterEncoding("utf-8");
 	System.out.println(request.getParameter("localName")+ "<--- home localName");
 		
