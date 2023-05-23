@@ -3,7 +3,7 @@
 <%@ page import = "java.net.*" %>
 <%
 	// 1. 컨트롤러 계층
-	
+	request.setCharacterEncoding("utf-8");
 	//로그인 유효성검사
 	if(session.getAttribute("loginMemberId") == null){
 	   	response.sendRedirect(request.getContextPath()+"/home.jsp");

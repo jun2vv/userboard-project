@@ -4,6 +4,8 @@
 <%@ page import = "java.sql.*"%>
 <%@ page import ="vo.*" %>
 <%
+	request.setCharacterEncoding("utf-8");
+
 	// 로그인 유효성검사& 에러메시지 변수
 	String msg = URLEncoder.encode(".", "utf-8");
 	if(session.getAttribute("loginMemberId") == null) {

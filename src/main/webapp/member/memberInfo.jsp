@@ -5,6 +5,7 @@
 
 
 <%
+	
 	// 컨트롤러 계층
 	// 로그인 유효성검사 
 	if(session.getAttribute("loginMemberId") == null) {

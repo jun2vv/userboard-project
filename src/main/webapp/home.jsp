@@ -4,7 +4,7 @@
 <%@ page import ="vo.*" %>
 <%
 	// 깃 테스트
-	response.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8");
 	System.out.println(request.getParameter("localName")+ "<--- home localName");
 		
 	// 1. 요청분석(컨트롤러 계층)

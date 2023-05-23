@@ -4,7 +4,7 @@
 <%@ page import ="vo.*" %>
 
 <%
-	response.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8");
 	System.out.println(request.getParameter("boardNo")+ "<--- para boardOne boardNo");
 	
 	// ----------------------------------------------------------------1. 요청분석(컨트롤러 계층)-------------------------------------------------------------------

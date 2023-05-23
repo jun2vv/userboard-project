@@ -5,7 +5,7 @@
 
 <%
 	//1.컨트롤러 계층
-	response.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8");
 
 	System.out.println(request.getParameter("boardNo") + " <--- modifyCommentAction para boardNo");
 	System.out.println(request.getParameter("commentNo") + " <--- modifyCommentAction para commentNo");

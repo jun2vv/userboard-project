@@ -7,7 +7,8 @@
 <%	
 	// -------------------------1. 요청분석(컨트롤러 계층)-------------------------------
 	// 유효성 검사
-	
+	request.setCharacterEncoding("utf-8");
+
 	// 혹시 로그인이 안되어있으면 못들어오게 차단.
 	if(session.getAttribute("loginMemberId") == null) {
 		response.sendRedirect(request.getContextPath()+"/home.jsp");

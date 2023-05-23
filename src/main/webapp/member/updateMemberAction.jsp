@@ -5,7 +5,7 @@
 <%
 	
 	// 1. 요청분석 컨트롤러계층
-	
+	request.setCharacterEncoding("utf-8");
 	// 오류메세지를 보낼 변수 msg
 	String msg = "";
 	if(session.getAttribute("loginMemberId") == null) {
