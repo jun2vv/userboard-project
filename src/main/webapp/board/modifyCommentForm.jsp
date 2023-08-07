@@ -25,8 +25,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<h1>댓글 수정</h1>
-	<a href = "<%=request.getContextPath() %>/board/boardOne.jsp?boardNo=<%=boardNo %>">뒤로가기</a>
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+	<br>
+	<h2>댓글 수정</h2>
 	<!-- 오류 메시지 -->
 	<%
 	if(request.getParameter("msg") != null){
@@ -52,7 +55,8 @@
 				</td>
 			</tr>
 		</table>
-		<button class="btn btn-success" type="submit">수정하기</button>
+		<a class="btn btn-outline-dark" href ="<%=request.getContextPath() %>/board/boardOne.jsp?boardNo=<%=boardNo %>">뒤로가기</a>
+		<button class="btn btn-outline-dark" type="submit">수정하기</button>
 	</form>
 	</div>
 </body>

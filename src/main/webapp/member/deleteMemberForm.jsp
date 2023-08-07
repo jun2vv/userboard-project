@@ -18,9 +18,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈으로</a>
-	<a class="btn btn-warning" href ="<%=request.getContextPath() %>/member/memberInfo.jsp">회원정보</a>
-	<h1>회원탈퇴</h1>
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+	<br>
+	<h2>회원탈퇴</h2>
 	<!-- 오류 메시지 -->
 	<%
 	if(request.getParameter("msg") != null){
@@ -41,7 +43,7 @@
 	            <td><input type="password" name="memberPw"></td>
 	         </tr>
          </table>
-         <button class="btn btn-success" type="submit">회원탈퇴</button>
+         <button class="btn btn-outline-dark" type="submit">회원탈퇴</button>
    </form>
    </div>
 </body>

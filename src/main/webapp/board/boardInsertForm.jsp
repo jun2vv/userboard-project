@@ -20,7 +20,7 @@
 	//모델 계층
 	// db 연동
 	String driver = "org.mariadb.jdbc.Driver";
-	String dburl = "jdbc:mariadb://127.0.0.1:3306/userboard";
+	String dburl = "jdbc:mariadb://3.37.133.115:3306/userboard";
 	String dbuser = "root";
 	String dbpw = "java1234";
 	// db연동 변수 
@@ -61,8 +61,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<h1>게시글 추가창</h1>
-	<a class="btn btn-info" href="<%=request.getContextPath()%>/home.jsp" >홈으로</a>
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+	<br>
+	<h2>게시글 추가</h2>
 	<form action="<%=request.getContextPath()%>/board/boardInsertAction.jsp" method="post">
 		<table class="table table-striped">
 			<tr>
@@ -85,14 +88,14 @@
 			</tr>
 			<tr>
 				<th>board_content</th>
-				<td><input type="text" name="boardContent"></td>
+				<td><textarea class="form-control" name="boardContent"></textarea></td>
 			</tr>
 			<tr>
 				<th>member_id</th>
 				<td><input type="text" name="memberId" value="<%=memberId%>" readonly="readonly"></td>
 			</tr>
 		</table>
-		<button class="btn btn-success" type="submit">게시글 추가하기</button>
+		<button class="btn btn-outline-dark" type="submit">게시글 추가하기</button>
 	</form>
 	</div>
 </body>

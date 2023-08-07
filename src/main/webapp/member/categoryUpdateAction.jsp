@@ -31,7 +31,7 @@
 	// 2.모델 계층
     //db 연동
     String driver = "org.mariadb.jdbc.Driver";
-    String dburl = "jdbc:mariadb://127.0.0.1:3306/userboard";
+    String dburl = "jdbc:mariadb://3.37.133.115:3306/userboard";
     String dbuser = "root";
     String dbpw = "java1234";
     // db연동 변수 

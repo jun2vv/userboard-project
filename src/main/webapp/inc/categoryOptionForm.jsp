@@ -12,7 +12,7 @@
 	//모델 계층
 	// db 연동
 	String driver = "org.mariadb.jdbc.Driver";
-	String dburl = "jdbc:mariadb://127.0.0.1:3306/userboard";
+	String dburl = "jdbc:mariadb://3.37.133.115:3306/userboard";
 	String dbuser = "root";
 	String dbpw = "java1234";
 	// db연동 변수 
@@ -52,12 +52,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+		<h2>지역 카테고리 설정창</h2>
 	<div style="text-align: center;">
-	<h1>지역 카테고리 설정창</h1>
-		<a href="<%=request.getContextPath()%>/home.jsp" class="btn btn-info">홈으로</a>
-		<a href="<%=request.getContextPath()%>/member/categoryInsertForm.jsp" class="btn btn-outline-success">지역카테고리 추가</a>
-		<a href="<%=request.getContextPath()%>/member/categoryUpdateForm.jsp" class="btn btn-outline-success">지역카테고리 수정</a>
-		<a href="<%=request.getContextPath()%>/member/categoryDeleteForm.jsp" class="btn btn-outline-success">지역카테고리 삭제</a>
 	</div>	
 		<table class="table table-bordered">
 			<tr class="table-info">
@@ -78,6 +77,9 @@
 			     %>
 	         
 		</table>
+		<a href="<%=request.getContextPath()%>/member/categoryInsertForm.jsp" class="btn btn-outline-success">지역카테고리 추가</a>
+		<a href="<%=request.getContextPath()%>/member/categoryUpdateForm.jsp" class="btn btn-outline-success">지역카테고리 수정</a>
+		<a href="<%=request.getContextPath()%>/member/categoryDeleteForm.jsp" class="btn btn-outline-success">지역카테고리 삭제</a>
 	</div>
 </body>
 </html>

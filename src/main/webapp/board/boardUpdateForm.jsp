@@ -35,8 +35,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<h1>게시글 수정창</h1>
-	<a href = "<%=request.getContextPath() %>/board/boardOne.jsp?boardNo=<%=boardNo %>">뒤로가기</a>
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+	<br>
+	<h2>게시글 수정창</h2>
 		<form action="<%=request.getContextPath() %>/board/boardModifyAction.jsp">
 			<table class="table table-striped">
 				<tr>
@@ -68,7 +71,7 @@
 					</td>
 				</tr>
 			</table>
-			<button class="btn btn-success" type="submit">게시글 수정하기</button>
+			<button class="btn btn-outline-dark" type="submit">게시글 수정하기</button>
 		</form>
 	</div>
 </body>

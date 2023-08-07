@@ -23,9 +23,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈으로</a>
-	<a class="btn btn-warning" href ="<%=request.getContextPath() %>/inc/categoryOptionForm.jsp">카테고리설정창</a>
-	<h1>지역카테고리 추가</h1>
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+	<br>
+	<h2>지역카테고리 추가</h2>
 	<!-- 오류 메시지 -->
 	<%
 	if(request.getParameter("msg") != null){
@@ -45,7 +47,7 @@
 				<td><input type="text" name="localName"></td>
 			</tr>
 		</table>
-		<button class="btn btn-success" type="submit">추가 하기</button>
+		<button class="btn btn-outline-dark" type="submit">추가 하기</button>
 	</form>
 	</div>
 </body>

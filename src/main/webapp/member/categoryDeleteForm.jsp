@@ -21,7 +21,7 @@
 	// 2.모델 계층
 	//db 연동
 	String driver = "org.mariadb.jdbc.Driver";
-	String dburl = "jdbc:mariadb://127.0.0.1:3306/userboard";
+	String dburl = "jdbc:mariadb://3.37.133.115:3306/userboard";
 	String dbuser = "root";
 	String dbpw = "java1234";
 	// db연동 변수 
@@ -58,9 +58,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈으로</a>
-	<a class="btn btn-warning" href ="<%=request.getContextPath() %>/inc/categoryOptionForm.jsp">카테고리설정창</a>
-	<h1>지역 카테고리 삭제</h1>
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+	<br>
+	<h2>지역 카테고리 삭제</h2>
 	<!-- 오류 메시지 -->
 	<%
 	if(request.getParameter("msg") != null){
@@ -97,7 +99,7 @@
 	            <td><input type="text" name="deleteLocalName"></td>
 	         </tr>
          </table>
-         <button class="btn btn-success" type="submit">지역 삭제</button>
+         <button class="btn btn-outline-dark" type="submit">지역 삭제</button>
    </form>
    </div>
 </body>

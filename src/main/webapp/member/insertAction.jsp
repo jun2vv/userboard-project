@@ -41,7 +41,7 @@
 
 	//db 연동변수
 	String driver = "org.mariadb.jdbc.Driver";
-	String dburl = "jdbc:mariadb://127.0.0.1:3306/userboard";
+	String dburl = "jdbc:mariadb://3.37.133.115:3306/userboard";
 	String dbuser = "root";
 	String dbpw = "java1234";
 	

@@ -21,8 +21,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 	<div class="container">
-	<a class="btn btn-info" href ="<%=request.getContextPath() %>/home.jsp">홈으로</a>
-	<a class="btn btn-warning" href ="<%=request.getContextPath() %>/member/memberInfo.jsp">회원정보</a>
+	<div>
+		<jsp:include page="/inc/mainMenu.jsp"></jsp:include>
+	</div>
+	<br>
 	<h1>비밀번호바꾸기</h1>
 	<!-- 오류 메시지 -->
 	<%
@@ -51,7 +53,7 @@
 				<td><input type="password" name="newPwCheck"></td>
 			</tr>
 		</table>
-			<button class="btn btn-success" type="submit">비밀번호변경</button>
+			<button class="btn btn-outline-dark" type="submit">비밀번호변경</button>
 	</form>
 	</div>
 </body>

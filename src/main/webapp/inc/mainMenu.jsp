@@ -32,7 +32,7 @@
 
 	<ul class="nav nav-tabs">
 		<!--  -->
-		<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/home.jsp">홈으로</a></li>
+		<li class="nav-item"><a class="nav-link" style="color: black;" href="<%=request.getContextPath()%>/home.jsp">홈으로</a></li>
 		
 		<!-- 로그인전 : 회원가입 
 			 로그인후 : 회원정보 / 로그아웃 (로그인정보 세션 loginMemberId
@@ -41,14 +41,14 @@
 		<%
 			if(session.getAttribute("loginMemberId") == null) {	// 로그인전
 		%>
-				<li class="nav-item list-group-item-primary"><a class="nav-link" href="<%=request.getContextPath()%>/member/insertMemberForm.jsp">회원가입</a></li>
+				<li class="nav-item list-group-item-primary"><a class="nav-link" style="color: black;" href="<%=request.getContextPath()%>/member/insertMemberForm.jsp">회원가입</a></li>
 		<% 
 			} else {	//로그인후
 		%>
-				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/memberInfo.jsp">회원정보</a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/inc/categoryOptionForm.jsp">지역카테고리 설정</a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/board/boardInsertForm.jsp">게시글 추가</a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/logoutAction.jsp">로그아웃</a></li>
+				<li class="nav-item"><a class="nav-link" style="color: black;" href="<%=request.getContextPath()%>/member/memberInfo.jsp">회원정보</a></li>
+				<li class="nav-item"><a class="nav-link" style="color: black;" href="<%=request.getContextPath()%>/inc/categoryOptionForm.jsp">지역카테고리 설정</a></li>
+				<li class="nav-item"><a class="nav-link" style="color: black;" href="<%=request.getContextPath()%>/board/boardInsertForm.jsp">게시글 추가</a></li>
+				<li class="nav-item"><a class="nav-link" style="color: black;" href="<%=request.getContextPath()%>/member/logoutAction.jsp">로그아웃</a></li>
 		<% 	
 			}
 		%>
