@@ -18,7 +18,7 @@
 		currentPage = Integer.parseInt(request.getParameter("currentPage"));
 	}
 	// 페이지당 출력할 행의 수
-	int rowPerPage = 10;
+	int rowPerPage = 15;
 	// 페이지당 시작 행번호
 	int startRow = (currentPage - 1) * rowPerPage;
 	
