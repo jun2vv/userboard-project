@@ -277,6 +277,27 @@
 				<%
 				}
 				%>
+				<br>
+				<div style="background-color: #C6DBDA;">
+					<h5>회원전용 게시판 프로젝트</h5>
+					<span style="font-weight: bold;">
+					- 기간 2023.05.03 ~ 2023.05.20 - <br><br>
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 개발환경 - <br>
+					OS : window11<br>
+					Tool : Eclipse,heidiSQL<br>
+					DB : mariaDB(3.1.3)<br>
+					WAS : Tomcat9<br>
+					Language : HTML5, CSS3, Java(JDK17), mySQL<br><br>
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 구현기능 -<br>
+					1. 게시물 페이징<br>
+					2. session을 사용한 로그인 및 회원가입<br>
+					3. 카테고리 추가,수정,삭제<br>
+					4. 게시글 추가,수정,삭제<br>
+					5. 게시글 별 댓글 추가,수정,삭제
+					</span>
+				</div>
 			</div>
 		</div>
 		<!--  페이징  ---------------- -->
