@@ -284,18 +284,23 @@
 					- 기간 2023.05.03 ~ 2023.05.20 - <br><br>
 					
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 개발환경 - <br>
-					OS : window11<br>
-					Tool : Eclipse,heidiSQL<br>
-					DB : mariaDB(3.1.3)<br>
-					WAS : Tomcat9<br>
-					Language : HTML5, CSS3, Java(JDK17), mySQL<br><br>
+					&nbsp;&nbsp;<span style="color: red;">OS</span> : window11<br>
+					&nbsp;&nbsp;<span style="color: red;">Tool</span> : Eclipse,heidiSQL<br>
+					&nbsp;&nbsp;<span style="color: red;">DB</span> : mariaDB(3.1.3)<br>
+					&nbsp;&nbsp;<span style="color: red;">WAS</span> : Tomcat9<br>
+					&nbsp;&nbsp;<span style="color: red;">Language</span> : HTML5,<br> 
+					&nbsp;&nbsp;CSS3, Java(JDK17),<br> 
+					&nbsp;&nbsp;mySQL<br>
 					
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 구현기능 -<br>
-					1. 게시물 페이징<br>
-					2. session을 사용한 로그인 및 회원가입<br>
-					3. 카테고리 추가,수정,삭제<br>
-					4. 게시글 추가,수정,삭제<br>
-					5. 게시글 별 댓글 추가,수정,삭제
+					&nbsp;&nbsp;1. 게시물 페이징<br>
+					&nbsp;&nbsp;2. session을 사용한<br>
+					&nbsp;&nbsp;로그인 및 회원가입<br>
+					&nbsp;&nbsp;3. 카테고리 추가,<br>
+					&nbsp;&nbsp;수정,삭제<br>
+					&nbsp;&nbsp;4. 게시글 추가,수정,삭제<br>
+					&nbsp;&nbsp;5. 게시글 별 댓글 추가,<br>
+					&nbsp;&nbsp;수정,삭제
 					</span>
 				</div>
 			</div>
